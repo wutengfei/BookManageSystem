@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp"
+        android:paddingTop="30dp"
+        android:paddingBottom="30dp"
+        android:background="@drawable/back03"
+        android:orientation="vertical"
+        tools:context=".com.AndroidUI.MainActivity">
+    <Button
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@drawable/button01"
+            android:text="新生入学"
+            android:textSize="25sp"
+            android:onClick="onClick"
+            android:layout_marginTop="10dp"
+            android:id="@+id/button6"
+    />
+
+    <Button
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@drawable/button01"
+            android:text="学生毕业"
+            android:onClick="onClick"
+            android:textSize="25sp"
+            android:layout_marginTop="20dp"
+            android:id="@+id/button5"
+    />
+
+    <Button
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@drawable/button01"
+            android:text="输出学生信息"
+            android:textSize="25sp"
+            android:onClick="onClick"
+            android:layout_marginTop="20dp"
+            android:id="@+id/button7"
+    />
+
+    <Button
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@drawable/button01"
+            android:text="同学信息查询"
+            android:textSize="25sp"
+            android:onClick="onClick"
+            android:layout_marginTop="20dp"
+            android:id="@+id/button8"
+    />
+
+    <Button
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@drawable/button01"
+            android:text="修改学生信息"
+            android:onClick="onClick"
+            android:textSize="25sp"
+            android:layout_marginTop="20dp"
+            android:id="@+id/button9"
+    />
+
+    <Button
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@drawable/button01"
+            android:text="清除全部信息"
+            android:onClick="onClick"
+            android:id="@+id/buttonDeleteAll"
+            android:textSize="25sp"
+            android:layout_marginTop="20dp"
+    />
+    <Button
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@drawable/button01"
+            android:text="保存全部数据"
+            android:onClick="onClick"
+            android:id="@+id/buttonSaveAll"
+            android:textSize="25sp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="10dp"
+    />
+  
+</LinearLayout>

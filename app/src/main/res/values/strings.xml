@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">BookManageSystem</string>
+    <string name="title_activity_book_insert">BookInsert</string>
+</resources>
