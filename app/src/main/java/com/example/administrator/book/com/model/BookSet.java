@@ -24,7 +24,7 @@ public class BookSet extends ArrayList<Book> {
         return bookList;
     }
 
-    //从文件读取信息，并将读取的信息转换成学术类的对象，存储到容器arraylist中
+    //从文件读取信息，并将读取的信息转换成学生类的对象，存储到容器arraylist中
     public static boolean readFile(Context io) {
         // File file1=new File("d:/javatest/stu1.txt");
         try {

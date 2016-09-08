@@ -47,8 +47,9 @@ public class BookControl {
             set.insertFile(file);
             for (int i = 0; i < set.size(); i++) {
                 stuDB.insertBook(set.get(i));
-                stuDB.close();
+
             }
+        stuDB.close();
            return true;
 
     }
