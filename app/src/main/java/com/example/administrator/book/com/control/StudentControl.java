@@ -19,6 +19,7 @@ public class StudentControl implements StudentControlInterfece{
     }
     public void addStudent(Student s1){
         stuDB.insert(s1);
+        stuDB.close();
     }
     public void saveAll() {
         set=StudentSet.getStudentList();
@@ -26,6 +27,7 @@ public class StudentControl implements StudentControlInterfece{
         for (int i = 0; i < set.size(); i++) {
             stuDB.insert(set.get(i));
         }
+        stuDB.close();
     }
     public void deleteAll(){
         stuDB.deleteAllData();
@@ -34,6 +36,7 @@ public class StudentControl implements StudentControlInterfece{
         Student s[]= stuDB.getOneByNo(no);
         if(s!=null) {
             stuDB.deleteOneDatabyNo(no);
+            stuDB.close();
             return true;
         }
         return false;
@@ -44,6 +47,7 @@ public class StudentControl implements StudentControlInterfece{
         Student s[]= stuDB.getOneByNo(no);
         if(s!=null) {
             stuDB.updataOneDataByNo(no, e);
+            stuDB.close();
         }
     }
     public Student [] QueryOnByNo(String no){

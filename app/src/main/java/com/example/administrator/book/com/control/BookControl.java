@@ -22,14 +22,15 @@ public class BookControl {
         stuDB.open();
 
     }
-//添加单本书
+
+    //添加单本书
     public boolean addBook(Book s1) {
         stuDB.insertBook(s1);
         stuDB.close();
-
         return true;
     }
-//保存所有初始图书信息
+
+    //保存所有初始图书信息
     public void saveAll() {
         set = BookSet.getBookList();
         set.clear();
@@ -43,22 +44,23 @@ public class BookControl {
     //读文件，批量插入
     public boolean insertFile(File file) throws IOException {
 
-            set = BookSet.getBookList();
-            set.insertFile(file);
-            for (int i = 0; i < set.size(); i++) {
-                stuDB.insertBook(set.get(i));
+        set = BookSet.getBookList();
+        set.insertFile(file);
+        for (int i = 0; i < set.size(); i++) {
+            stuDB.insertBook(set.get(i));
 
-            }
+        }
         stuDB.close();
-           return true;
+        return true;
 
     }
 
-//删除所有图书
+    //删除所有图书
     public void deleteAll() {
         stuDB.deleteAllDataBook();
     }
-//删除单本书
+
+    //删除单本书
     public boolean deleteBookByNo(String no) {
         Book s[] = stuDB.getOneByNoBook(no);
         if (s != null) {
@@ -68,7 +70,8 @@ public class BookControl {
         }
         return false;
     }
-//修改图书信息
+
+    //修改图书信息
     public boolean updataByNo(Book e) {
         String no = e.getBookno();
         Book s[] = stuDB.getOneByNoBook(no);
@@ -80,18 +83,22 @@ public class BookControl {
 
         return true;
     }
-//查询书号
+
+    //查询书号
     public Book[] QueryOnByNo(String no) {
-        return stuDB.getOneByNoBook(no);
+        Book[] books=stuDB.getOneByNoBook(no);
+        stuDB.close();
+        return books;
 
     }
-//查询（书名，作者，出版社，库存等）
+
+    //查询（书名，作者，出版社，库存等）
     public Book[] getAttrBook(String attr, String book_attr) {//参数分别是bookinfo表中的字段名，用户输入的book的属性
         return stuDB.getAttrBook(attr, book_attr);
     }
 
 
-//查询所有图书
+    //查询所有图书
     public Book[] getAllBook() {
         return stuDB.getAllBook();
     }
