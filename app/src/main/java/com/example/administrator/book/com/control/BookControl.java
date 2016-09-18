@@ -78,7 +78,6 @@ public class BookControl {
         if (s != null) {
             stuDB.updateByBookno(no, e);
             stuDB.close();
-
         }
 
         return true;
@@ -87,7 +86,6 @@ public class BookControl {
     //查询书号
     public Book[] QueryOnByNo(String no) {
         Book[] books=stuDB.getOneByNoBook(no);
-        stuDB.close();
         return books;
 
     }
