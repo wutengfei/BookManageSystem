@@ -143,10 +143,10 @@ public class DBAdapter {
     }
 
     private Student[] ConvertToStudent(Cursor cursor) {
-        int resultCouunts = cursor.getCount();
-        if (resultCouunts == 0 || !cursor.moveToFirst()) return null;
-        Student[] peoples = new Student[resultCouunts];
-        for (int i = 0; i < resultCouunts; i++) {
+        int resultCounts = cursor.getCount();
+        if (resultCounts == 0 || !cursor.moveToFirst()) return null;
+        Student[] peoples = new Student[resultCounts];
+        for (int i = 0; i < resultCounts; i++) {
             peoples[i] = new Student();
             peoples[i].setStudentNo(cursor.getString(cursor.getColumnIndex(KEY_NO)));
             peoples[i].setStudentName(cursor.getString(cursor.getColumnIndex(KEY_NAME)));
@@ -160,7 +160,7 @@ public class DBAdapter {
 
 
     //////////////////////////////////////图书
-    public long insertBook(Book book) {
+    public void insertBook(Book book) {
         ContentValues newValues = new ContentValues();
         newValues.put(KEY_BOOKNO, book.getBookno());
         newValues.put(KEY_BOOKNAME, book.getBookname());
@@ -169,7 +169,7 @@ public class DBAdapter {
         newValues.put(KEY_TOTALNUM, book.getTotalnum());
         newValues.put(KEY_BORROWNUM, book.getBorrownum());
         newValues.put(KEY_PUBDAY, book.getPubday());
-        return db.insert(DB_TABLE_BOOK, null, newValues);
+        db.insert(DB_TABLE_BOOK, null, newValues);
     }
 
     public long deleteAllDataBook() {
@@ -182,16 +182,16 @@ public class DBAdapter {
 
     //更新图书信息
     public long updateByBookno(String no, Book book) {
-        ContentValues updataValues = new ContentValues();
-        updataValues.put(KEY_BOOKNO, book.getBookno());
-        updataValues.put(KEY_BOOKNAME, book.getBookname());
-        updataValues.put(KEY_AUTHOR, book.getAuthor());
-        updataValues.put(KEY_PUBLISHER, book.getPublisher());
-        updataValues.put(KEY_TOTALNUM, book.getTotalnum());
-        updataValues.put(KEY_BORROWNUM, book.getBorrownum());
-        updataValues.put(KEY_PUBDAY, book.getPubday());
+        ContentValues updateValues = new ContentValues();
+        updateValues.put(KEY_BOOKNO, book.getBookno());
+        updateValues.put(KEY_BOOKNAME, book.getBookname());
+        updateValues.put(KEY_AUTHOR, book.getAuthor());
+        updateValues.put(KEY_PUBLISHER, book.getPublisher());
+        updateValues.put(KEY_TOTALNUM, book.getTotalnum());
+        updateValues.put(KEY_BORROWNUM, book.getBorrownum());
+        updateValues.put(KEY_PUBDAY, book.getPubday());
 
-        return db.update(DB_TABLE_BOOK, updataValues, KEY_BOOKNO + " like ? ", new String[]{no});
+        return db.update(DB_TABLE_BOOK, updateValues, KEY_BOOKNO + " like ? ", new String[]{no});
 
     }
 

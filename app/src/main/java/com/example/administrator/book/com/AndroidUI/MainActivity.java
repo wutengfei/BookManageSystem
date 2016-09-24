@@ -8,13 +8,12 @@ import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import android.view.View;
 import com.example.administrator.book.R;
 import android.content.Intent;
 import com.example.administrator.book.com.AndroidUI.book.BookMessageManage;
 import com.example.administrator.book.com.AndroidUI.borrow.BorrowManage;
 import com.example.administrator.book.com.AndroidUI.student.StudentActivity;
-import com.example.administrator.book.com.control.BookControl;
-import com.example.administrator.book.com.control.StudentControl;
 import com.example.administrator.book.com.model.BookSet;
 import com.example.administrator.book.com.model.StudentSet;
 
