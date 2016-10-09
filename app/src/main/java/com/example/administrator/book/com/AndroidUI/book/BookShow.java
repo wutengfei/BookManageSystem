@@ -2,15 +2,16 @@ package com.example.administrator.book.com.AndroidUI.book;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
+import android.widget.Toast;
 import com.example.administrator.book.R;
 import com.example.administrator.book.com.control.BookControl;
 import com.example.administrator.book.com.model.Book;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
 
 public class BookShow extends AppCompatActivity {
     @Override
@@ -20,7 +21,7 @@ public class BookShow extends AppCompatActivity {
         ListView lv = (ListView) findViewById(R.id.lv);
 
         //获取到集合数据
-        List<HashMap<String, Object>> data = new ArrayList<HashMap<String, Object>>();
+        final List<HashMap<String, Object>> data = new ArrayList<HashMap<String, Object>>();
 
         BookControl bookcontrol = new BookControl(BookShow.this);
         Book book[] = bookcontrol.getAllBook();
@@ -43,7 +44,22 @@ public class BookShow extends AppCompatActivity {
                 new int[]{R.id.tv_no, R.id.tv_name, R.id.tv_author, R.id.tv_publisher, R.id.tv_totalnum,
                         R.id.tv_borrownum, R.id.tv_pubday});
         //实现列表的显示
-        lv.setAdapter(adapter);
-
+        if (lv != null) {
+            lv.setAdapter(adapter);
+            lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                    Set<String> keySet = data.get(position).keySet();
+                    Iterator<String> it = keySet.iterator();
+                    while (it.hasNext()) {
+                        String key = it.next();
+                        if (key.equals("bookname")) {
+                            Object value = data.get(position).get(key);
+                            Toast.makeText(BookShow.this, value + "", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                }
+            });
+        }
     }
 }
