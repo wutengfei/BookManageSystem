@@ -54,7 +54,7 @@ public class BorrowOverDateSelect extends AppCompatActivity {
             if ((day1-day2) > 30)
             borrowList.add(j++, borrow[i]);
         }
-
+//把链表中的数据存入Borrow数组
         Borrow borrow1[] = new Borrow[borrowList.size()];
         for (int i = 0; i < borrowList.size(); i++)
             borrow1[i] = (Borrow) borrowList.get(i);

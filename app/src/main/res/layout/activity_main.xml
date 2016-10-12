@@ -14,8 +14,11 @@
     <TextView
             android:text="图\n书\n管\n理\n系\n统"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" android:id="@+id/textView" android:textSize="50dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView"
+            android:textSize="50dp"
             android:textColor="#60db30"
             android:layout_centerHorizontal="true"
-            android:layout_marginBottom="88dp" android:layout_centerVertical="true"/>
+            android:layout_marginBottom="88dp"
+            android:layout_centerVertical="true"/>
 </RelativeLayout>
