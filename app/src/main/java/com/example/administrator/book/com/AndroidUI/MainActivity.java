@@ -102,7 +102,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    DialogInterface.OnClickListener listener = new DialogInterface.OnClickListener() {
+    private DialogInterface.OnClickListener listener = new DialogInterface.OnClickListener() {
         public void onClick(DialogInterface dialog, int which) {
             switch (which) {
                 case AlertDialog.BUTTON_POSITIVE:// "确认"按钮退出程序
