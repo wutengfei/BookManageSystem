@@ -28,7 +28,7 @@ public class showAllStudentActivity extends AppCompatActivity {
 
         if(s!=null)
         for (int i = 0; i < s.length; i++) {
-            HashMap<String, Object> item = new HashMap<String, Object>();
+             HashMap<String, Object> item = new HashMap<String, Object>();
             item.put("no", s[i].getStudentNo());
             item.put("name",s[i].getStudentName());
             item.put("phone", s[i].getStudentMobile());

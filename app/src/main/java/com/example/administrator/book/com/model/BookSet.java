@@ -4,7 +4,7 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import com.example.administrator.book.R;
-import org.apache.http.util.EncodingUtils;
+
 
 import java.io.*;
 import java.util.ArrayList;

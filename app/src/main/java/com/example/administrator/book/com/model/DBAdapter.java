@@ -40,7 +40,7 @@ public class DBAdapter {
     public static final String KEY_BORROW_DATE = "borrowDate";
 
 
-    private SQLiteDatabase db;
+    public SQLiteDatabase db;
     private final Context context;
     private DBOpenHelper dbOpenHelper;
 
@@ -74,6 +74,8 @@ public class DBAdapter {
         @Override
         public void onUpgrade(SQLiteDatabase _db, int _oldVersion, int _newVersion) {
             _db.execSQL("DROP TABLE IF EXISTS" + DB_TABLE);
+            _db.execSQL("DROP TABLE IF EXISTS" + DB_TABLE_BOOK);
+            _db.execSQL("DROP TABLE IF EXISTS" + DB_TABLE_BORROW);
             onCreate(_db);
         }
 
@@ -114,19 +116,19 @@ public class DBAdapter {
         return db.delete(DB_TABLE, null, null);
     }
 
-    public long deleteOneDatabyNo(String no) {
+    public long deleteOneDataByNo(String no) {
         return db.delete(DB_TABLE, KEY_NO + " like ? ", new String[]{no});
     }
 
-    public long updataOneDataByNo(String no, Student student) {
-        ContentValues updataValues = new ContentValues();
-        updataValues.put(KEY_NO, student.getStudentNo());
-        updataValues.put(KEY_NAME, student.getStudentName());
-        updataValues.put(KEY_CLASS, student.getStudentClass());
-        updataValues.put(KEY_MAJOR, student.getStudentMajor());
-        updataValues.put(KEY_MOBILE, student.getStudentMobile());
+    public long updateOneDataByNo(String no, Student student) {
+        ContentValues updateValues = new ContentValues();
+        updateValues.put(KEY_NO, student.getStudentNo());
+        updateValues.put(KEY_NAME, student.getStudentName());
+        updateValues.put(KEY_CLASS, student.getStudentClass());
+        updateValues.put(KEY_MAJOR, student.getStudentMajor());
+        updateValues.put(KEY_MOBILE, student.getStudentMobile());
 
-        return db.update(DB_TABLE, updataValues, KEY_NO + " like ? ", new String[]{no});
+        return db.update(DB_TABLE, updateValues, KEY_NO + " like ? ", new String[]{no});
 
     }
 

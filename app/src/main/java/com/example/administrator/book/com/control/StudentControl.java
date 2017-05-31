@@ -24,9 +24,13 @@ public class StudentControl implements StudentControlInterfece{
     public void saveAll() {
         set=StudentSet.getStudentList();
         set.readFile(context);
+        //使用事务可以极大地加快插入速度，不再是一条一条插入，而是暂存在缓存区最后一起插入数据库
+        stuDB.db.beginTransaction();//开启事务
         for (int i = 0; i < set.size(); i++) {
             stuDB.insert(set.get(i));
         }
+        stuDB.db.setTransactionSuccessful();// 设置事务标志为成功，当结束事务时就会提交事务
+        stuDB.db.endTransaction();// 结束事务
         stuDB.close();
     }
     public void deleteAll(){
@@ -35,7 +39,7 @@ public class StudentControl implements StudentControlInterfece{
     public boolean deleteStudentByNo(String no){
         Student s[]= stuDB.getOneByNo(no);
         if(s!=null) {
-            stuDB.deleteOneDatabyNo(no);
+            stuDB.deleteOneDataByNo(no);
             stuDB.close();
             return true;
         }
@@ -46,7 +50,7 @@ public class StudentControl implements StudentControlInterfece{
         String no=e.getStudentNo();
         Student s[]= stuDB.getOneByNo(no);
         if(s!=null) {
-            stuDB.updataOneDataByNo(no, e);
+            stuDB.updateOneDataByNo(no, e);
             stuDB.close();
         }
     }

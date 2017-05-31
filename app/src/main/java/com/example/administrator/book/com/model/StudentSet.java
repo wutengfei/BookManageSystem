@@ -19,10 +19,11 @@ public class StudentSet extends ArrayList<Student>  {
                return studentList;
     }
 
-    //从文件读取学生信息，并将读取的信息转换成学术类的对象，存储到容器arraylist中
+    //从文件读取学生信息，并将读取的信息转换成学生类的对象，存储到容器arraylist中
     public static boolean readFile(Context io)  {
           // File file1=new File("d:/javatest/stu1.txt");
         try {
+            studentList.clear();
             InputStream in = io.getResources().openRawResource(R.raw.student1);
 
             //把字节流转换成字符流并设置编码为国标码
