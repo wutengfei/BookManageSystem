@@ -57,9 +57,7 @@ public class StudentControl implements StudentControlInterfece{
     public Student [] QueryOnByNo(String no){
         return stuDB.getOneByNo(no);
     }
-    public StudentSet getAllStudentSet(){
-        return set;
-    }
+
     public Student[] getAllStudent(){
         return stuDB.getAllStu();
     }

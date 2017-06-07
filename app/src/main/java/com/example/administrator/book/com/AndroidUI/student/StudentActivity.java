@@ -41,7 +41,7 @@ public class StudentActivity extends AppCompatActivity implements View.OnClickLi
                     .setPositiveButton("确定",new DialogInterface.OnClickListener(){
                         public void onClick(DialogInterface dialog,int whichButton){
                             String na=edit.getText().toString();
-                           if( studentcontrol.deleteStudentByNo(na)==true)
+                           if(studentcontrol.deleteStudentByNo(na))
                             Toast.makeText(StudentActivity.this,"删除成功",Toast.LENGTH_SHORT).show();
                             else
                             Toast.makeText(StudentActivity.this,"无这个人",Toast.LENGTH_SHORT).show();
