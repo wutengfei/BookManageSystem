@@ -10,60 +10,60 @@
             android:label="@string/app_name"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity android:name=".com.AndroidUI.MainActivity">
+        <activity android:name="com.AndroidUI.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".com.AndroidUI.student.StudentActivity">
+        <activity android:name="com.AndroidUI.student.StudentActivity">
         </activity>
-        <activity android:name=".com.AndroidUI.student.InsertActivity">
+        <activity android:name="com.AndroidUI.student.InsertActivity">
         </activity>
-        <activity android:name=".com.AndroidUI.student.UpdataActivity">
+        <activity android:name="com.AndroidUI.student.UpdataActivity">
         </activity>
-        <activity android:name=".com.AndroidUI.student.showAllStudentActivity">
+        <activity android:name="com.AndroidUI.student.showAllStudentActivity">
         </activity>
-        <activity android:name=".com.AndroidUI.book.BookInsert">
+        <activity android:name="com.AndroidUI.book.BookInsert">
         </activity>
-        <activity android:name=".com.AndroidUI.book.BookMessageManage">
+        <activity android:name="com.AndroidUI.book.BookMessageManage">
         </activity>
-        <activity android:name=".com.AndroidUI.book.BookInsertSome">
+        <activity android:name="com.AndroidUI.book.BookInsertSome">
         </activity>
-        <activity android:name=".com.AndroidUI.book.BookShow">
+        <activity android:name="com.AndroidUI.book.BookShow">
         </activity>
-        <activity android:name=".com.AndroidUI.book.BookSelect">
+        <activity android:name="com.AndroidUI.book.BookSelect">
         </activity>
-        <activity android:name=".com.AndroidUI.book.BookSelectNo">
+        <activity android:name="com.AndroidUI.book.BookSelectNo">
         </activity>
-        <activity android:name=".com.AndroidUI.book.BookSelectName">
+        <activity android:name="com.AndroidUI.book.BookSelectName">
         </activity>
-        <activity android:name=".com.AndroidUI.book.BookSelectAuthor">
+        <activity android:name="com.AndroidUI.book.BookSelectAuthor">
         </activity>
-        <activity android:name=".com.AndroidUI.book.BookSelectPublisher">
+        <activity android:name="com.AndroidUI.book.BookSelectPublisher">
         </activity>
-        <activity android:name=".com.AndroidUI.book.BookSelectPubday">
+        <activity android:name="com.AndroidUI.book.BookSelectPubday">
         </activity>
-        <activity android:name=".com.AndroidUI.borrow.BorrowManage">
+        <activity android:name="com.AndroidUI.borrow.BorrowManage">
         </activity>
-        <activity android:name=".com.AndroidUI.borrow.BorrowBook">
+        <activity android:name="com.AndroidUI.borrow.BorrowBook">
         </activity>
-        <activity android:name=".com.AndroidUI.borrow.BorrowReturn">
+        <activity android:name="com.AndroidUI.borrow.BorrowReturn">
         </activity>
-        <activity android:name=".com.AndroidUI.borrow.BorrowShow">
+        <activity android:name="com.AndroidUI.borrow.BorrowShow">
         </activity>
-        <activity android:name=".com.AndroidUI.borrow.BorrowMessageSelect">
+        <activity android:name="com.AndroidUI.borrow.BorrowMessageSelect">
         </activity>
-        <activity android:name=".com.AndroidUI.borrow.BorrowStudentBorrowSelect">
+        <activity android:name="com.AndroidUI.borrow.BorrowStudentBorrowSelect">
         </activity>
-        <activity android:name=".com.AndroidUI.borrow.BorrowBookBorrowSelect">
+        <activity android:name="com.AndroidUI.borrow.BorrowBookBorrowSelect">
         </activity>
-        <activity android:name=".com.AndroidUI.borrow.BorrowOverDateSelect">
+        <activity android:name="com.AndroidUI.borrow.BorrowOverDateSelect">
         </activity>
-        <activity android:name=".com.AndroidUI.book.BookUpdate">
+        <activity android:name="com.AndroidUI.book.BookUpdate">
         </activity>
-        <activity android:name=".com.AndroidUI.book.BookDeleteOne">
+        <activity android:name="com.AndroidUI.book.BookDeleteOne">
         </activity>
     </application>
 
